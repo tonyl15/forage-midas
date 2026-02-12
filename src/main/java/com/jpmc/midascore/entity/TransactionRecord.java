@@ -25,13 +25,17 @@ public class TransactionRecord {
     @Column(nullable = false)
     private double amount;
 
+    @Column(nullable = false)
+    private float incentive;
+
     public TransactionRecord() {
     }
 
-    public TransactionRecord(UserRecord sender, UserRecord recipient, double amount) {
+    public TransactionRecord(UserRecord sender, UserRecord recipient, double amount, float incentive) {
         this.sender = sender;
         this.recipient = recipient;
         this.amount = amount;
+        this.incentive = incentive;
     }
 
     public long getTransactionId() {
@@ -64,5 +68,13 @@ public class TransactionRecord {
 
     public void setAmount(double amount) {
         this.amount = amount;
+    }
+
+    public float getIncentive() {
+        return incentive;
+    }
+
+    public void setIncentive(float incentive) {
+        this.incentive = incentive;
     }
 }
